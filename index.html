@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouhamed Kaïs | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-flex">
+            <div class="logo">KB</div>
+            <ul>
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="competences.html">Compétences</a></li>
+                <li><a href="veille.html">Veille</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero-cyber">
+        <div class="hero-overlay"></div>
+        <div class="container hero-flex">
+            <div class="hero-text">
+                <p class="typing">Bonjour 👋, je m'appelle</p>
+                <h1 class="glitch-name">Bouhamed <span class="highlight">Kaïs</span></h1>
+                <p class="role">et je suis Full-Stack Engineer Apprentice</p>
+                <a href="#about" class="btn-hero-custom">Me découvrir !</a>
+            </div>
+            <div class="hero-visual">
+                <div class="kb-logo-bg"><span>KB</span></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="cyber-divider"></div>
+
+    <section id="about" class="container presentation-section">
+        <div class="about-flex">
+            <div class="about-img">
+                <img src="ma-photo.png" alt="Photo de Kaïs" class="cyber-pic">
+            </div>
+            <div class="about-text">
+                <h2 class="terminal-title">Je me présente</h2>
+                <p>Étudiant au Lycée Théodore Aubanel à Avignon, en deuxième année de BTS SIO (Services Informatiques aux organisations), spécialité SISR (Solutions d'Infrastructure, Systèmes et Réseaux.)</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="cyber-divider"></div>
+
+    <section class="container main-experience-flex">
+        <div class="column-journey">
+            <h2 class="terminal-title">Mon Parcours</h2>
+            <div class="terminal-col">
+                <div class="terminal-header">Formations</div>
+                <div class="terminal-body big-font">
+                    <div class="entry">
+                        <span>BTS SIO SISR</span>
+                        <p>2024 - 2026 | Lycée Aubanel (Avignon)</p>
+                    </div>
+                    <div class="entry">
+                        <span>ARMÉE</span>
+                        <p>Engagement Volontaire</p>
+                    </div>
+                    <div class="entry">
+                        <span>BAC PRO SN (RISC)</span>
+                        <p>2019/2022 — La Salle — Avignon (84)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column-stages">
+            <h2 class="terminal-title">Mes Stages</h2>
+            <div class="stages-list-terminal">
+                <div class="stage-cyber-card-trigger" onclick="openModal('modal1')">
+                    <span>AS COMPUTER</span> <span class="plus">ouvrir</span>
+                </div>
+                <div class="stage-cyber-card-trigger" onclick="openModal('modal2')">
+                    <span>SABIL TECHNOLOGIE</span> <span class="plus">ouvrir</span>
+                </div>
+                <div class="stage-cyber-card-trigger" onclick="openModal('modal3')">
+                    <span>GRAND DELTA HABITAT</span> <span class="plus">ouvrir</span>
+                </div>
+                <div class="stage-cyber-card-trigger" onclick="openModal('modal4')">
+                    <span>UNIVERSITÉ AVIGNON</span> <span class="plus">ouvrir</span>
+                </div>
+                <div class="stage-cyber-card-trigger" onclick="openModal('modal5')">
+                    <span>ESA GAMES</span> <span class="plus">ouvrir</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <dialog id="modal1" class="cyber-modal">
+        <div class="modal-content">
+            <h3>$ info stage_01.txt</h3>
+            <p><strong>Entreprise :</strong> [Nom de l'entreprise]</p>
+            <p><strong>Missions :</strong> Détaille ici tes missions techniques.</p>
+            <button onclick="closeModal('modal1')" class="btn-close">Fermer [X]</button>
+        </div>
+    </dialog>
+
+    <dialog id="modal2" class="cyber-modal">
+        <div class="modal-content">
+            <h3>$ info stage_02.txt</h3>
+            <p><strong>Entreprise :</strong> [Nom de l'entreprise]</p>
+            <p><strong>Missions :</strong> Détaille ici tes missions techniques.</p>
+            <button onclick="closeModal('modal2')" class="btn-close">Fermer [X]</button>
+        </div>
+    </dialog>
+
+    <dialog id="modal3" class="cyber-modal">
+        <div class="modal-content">
+            <h3>$ info stage_03.txt</h3>
+            <p><strong>Entreprise :</strong> [Nom de l'entreprise]</p>
+            <p><strong>Missions :</strong> Détaille ici tes missions techniques.</p>
+            <button onclick="closeModal('modal3')" class="btn-close">Fermer [X]</button>
+        </div>
+    </dialog>
+
+    <dialog id="modal4" class="cyber-modal">
+        <div class="modal-content">
+            <h3>$ info stage_04.txt</h3>
+            <p><strong>Entreprise :</strong> [Nom de l'entreprise]</p>
+            <p><strong>Missions :</strong> Détaille ici tes missions techniques.</p>
+            <button onclick="closeModal('modal4')" class="btn-close">Fermer [X]</button>
+        </div>
+    </dialog>
+
+    <dialog id="modal5" class="cyber-modal">
+        <div class="modal-content">
+            <h3>$ info stage_05.txt</h3>
+            <p><strong>Entreprise :</strong> [Nom de l'entreprise]</p>
+            <p><strong>Missions :</strong> Détaille ici tes missions techniques.</p>
+            <button onclick="closeModal('modal5')" class="btn-close">Fermer [X]</button>
+        </div>
+    </dialog>
+    <footer>
+        <div class="container" style="text-align:center; padding: 40px 0; color: #475569;">
+            <p>&copy; 2026 - Bouhamed Kaïs</p>
+        </div>
+    </footer>
+
+    <script>
+        function openModal(id) { document.getElementById(id).showModal(); }
+        function closeModal(id) { document.getElementById(id).close(); }
+    </script>
+</body>
+</html>
