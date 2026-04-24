@@ -3,41 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compétences | Mon Portfolio</title>
+    <title>Compétences | Bouhamed Kaïs</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <nav>
-        <div class="container">
-            <span class="logo">PORTFOLIO</span>
+        <div class="container nav-flex">
+            <div class="logo">KB</div>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="competences.html">Compétences</a></li>
+                <li><a href="competences.html" class="active">Compétences</a></li>
                 <li><a href="veille.html">Veille</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="container">
-        <h2>Mes Compétences</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>Réseaux</h3>
-                <ul>
-                    <li>routage<span class="level">dynamique</span></li>
-                    <li>Active<span class="level">Directory</span></li>
-                </ul>
+    <header class="container skill-hero">
+        <h1 class="gradient-text">Compétences Techniques</h1>
+        <div class="gradient-line"></div>
+        <p class="skill-subtitle">
+            Découvrez mes compétences techniques acquises à travers ma formation BTS SIO SISR et mes expériences professionnelles en administration système et réseau
+        </p>
+    </header>
+
+    <div class="cyber-divider"></div>
+
+    <main class="container page-content">
+        
+        <section class="skill-section">
+            <div class="skill-section-header">
+                <div class="section-icon-container">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                        <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                        <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                        <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                        <line x1="10" y1="6" x2="10.01" y2="6"></line>
+                        <line x1="10" y1="18" x2="10.01" y2="18"></line>
+                    </svg>
+                </div>
+                <h2>Support et mise à disposition des services informatiques</h2>
             </div>
-            <div class="skill-category">
-                <h3>Windows</h3>
-                <ul>
-                    <li>GPO</li>
-                    <li>DNS</li>
-                </ul>
+            <div class="skills-grid-page">
+                
+                <div class="skill-card">
+                    <div class="card-icon"><img src="logo-windows.png" alt="Windows"></div>
+                    <h3>Windows Server</h3>
+                    <p>Compétence acquise en BTS SIO SISR via des TP et projets. Installation et configuration de services AD et DHCP sur des VM.
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="card-icon"><img src="logo-linux.png" alt="Linux"></div>
+                    <h3>Linux (Debian, Ubuntu)</h3>
+                    <p>Administration de serveurs Linux en ligne de commande (CLI). Gestion des utilisateurs, permissions, installation et configuration de services réseaux.</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="card-icon"><img src="logo-librenms.png" alt="LibreNMS"></div>
+                    <h3>Supervision & Monitoring (LibreNMS)</h3>
+                    <p>Mise en œuvre de la solution LibreNMS pour la surveillance centralisée des équipements via SNMP (v2c/v3). Configuration de l'auto-discovery, gestion des seuils d'alerting et monitoring de la performance (trafic, CPU, RAM) des switchs Cisco et serveurs Linux/Windows.</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="card-icon"><img src="logo-ad.png" alt="AD"></div>
+                    <h3>Active Directory</h3>
+                    <p>Manipulation dans des environnements de TP. Création de comptes, groupes, stratégies de sécurité et GPO.
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <div class="card-icon"><img src="logo-glpi.png" alt="GLPI"></div>
+                    <h3>GLPI (Gestion de Parc)</h3>
+                    <p>Mise en place de GLPI pour l'inventaire matériel et logiciel, ainsi que la gestion des incidents (tickets helpdesk). Installation et configuration.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="card-icon"><img src="logo-mailcow.png" alt="mailcow"></div>
+                    <h3>Administration Messagerie & API (Mailcow)</h3>
+                    <p>Déploiement d'une infrastructure de messagerie collaborative Mailcow sous Docker. Automatisation complète du provisionnement des boîtes mail via API REST, synchronisée en temps réel avec l'annuaire Active Directory pour optimiser la gestion des accès.</p>
+                </div>
             </div>
+        </section>
+
+        <div class="cyber-divider"></div>
+
+        <section class="skill-section">
+            <div class="skill-section-header">
+                <div class="section-icon-container">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="9" y="3" width="6" height="6" rx="1"></rect>
+                        <rect x="3" y="15" width="6" height="6" rx="1"></rect>
+                        <rect x="15" y="15" width="6" height="6" rx="1"></rect>
+                        <path d="M12 9v3"></path>
+                        <path d="M6 12h12"></path>
+                        <path d="M6 12v3"></path>
+                        <path d="M18 12v3"></path>
+                    </svg>
+                </div>
+                <h2>Administration des systèmes et des réseaux</h2>
+            </div>
+            <div class="skills-grid-page">
+                
+                <div class="skill-card">
+                    <div class="card-icon"><img src="cisco.png" alt="Cisco"></div>
+                    <h3>Cisco </h3>
+                    <p>TP sur Packet Tracer en BTS SIO SISR: configuration de routeurs, VLAN, adressage IP, routage statique/dynamique (RipV2/OSPF), NAT/PAT.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="card-icon"><img src="dns-zone.png" alt="DNS"></div>
+                    <h3>DNS</h3>
+                    <p>TP BTS : configuration de zones DNS, résolution de noms, intégration avec Active Directory.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="card-icon"><img src="proxmox.png" alt="proxmox"></div>
+                    <h3>Proxmox</h3>
+                    <p>Virtualisation de serveurs via Proxmox durant les projets de BTS. Création de VM, configuration d'interfaces virtuelles, backups.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="card-icon"><img src="dhcp.png" alt="dhcp"></div>
+                    <h3>DHCP</h3>
+                    <p>Mis en place de baux d'adresses sur Windows Server et Debian en TP pour l’attribution automatique d’adresses IP.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="card-icon"><img src="virtualbox.png" alt="virtualbox"></div>
+                    <h3>VirtualBox</h3>
+                    <p>Utilisé pour la virtualisation d’environnements Windows/Linux lors de projets personnels et en laboratoire scolaire.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="card-icon"><img src="wifi.png" alt="wifi"></div>
+                    <h3>Déploiement & Sécurisation Wi-Fi</h3>
+                    <p>Installation et configuration de points d'accès (AP) avec segmentation par SSID. Mise en œuvre de l'isolation des flux via VLANs et sécurisation des accès par protocoles WPA2/WPA3.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="card-icon"><img src="docker.png" alt="docker"></div>
+                    <h3>Conteneurisation & Virtualisation légère (Docker)</h3>
+                    <p>Déploiement et gestion d'architectures micro-services via Docker et Docker Compose. Isolation des environnements applicatifs et automatisation des mises à jour pour garantir la haute disponibilité et la portabilité des services</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="cyber-divider"></div>
+
+        <section class="skill-section">
+            <div class="skill-section-header">
+                <div class="section-icon-container">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                </div>
+                <h2>Cybersécurité des services informatiques</h2>
+            </div>
+            <div class="skills-grid-page">
+                
+                <div class="skill-card">
+                    <div class="card-icon"><img src="pfsense.png" alt="Script"></div>
+                    <h3>Pare-feu (PfSense)</h3>
+                    <p>Installation et configuration de firewalls pfSense. Mise en place de règles de filtrage (ACL),</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="card-icon"><img src="wireshark.png" alt="HTML/CSS"></div>
+                    <h3>Wireshark</h3>
+                    <p>Utilisé pour analyser le trafic réseau dans le cadre de TP sécurité au BTS. Observation de trames, détection d’anomalies.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="card-icon"><img src="tailscale.png" alt="pfSense"></div>
+                    <h3>VPN (Tailscale)</h3>
+                    <p>Mise en place d’un VPN simple pour le projet GSB dans le cadre du BTS. Concepts abordés : chiffrement, tunnels, sécurité réseau.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container" style="text-align:center; padding: 40px 0; color: #475569;">
+            <p>&copy; 2026 - Bouhamed Kaïs</p>
         </div>
-    </section>
+    </footer>
+
 </body>
 </html>
