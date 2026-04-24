@@ -13,19 +13,28 @@ body {
     color: white;
     font-family: var(--font-mono);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 .highlight { color: var(--neon-blue); }
 
 /* --- BARRE BLEUE DE SÉPARATION --- */
+/* --- Ligne de séparation Full-Width (Bord à bord) --- */
 .cyber-divider {
-    width: 100%;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
     box-shadow: 0 0 10px var(--neon-blue);
-    opacity: 0.4;
-    margin: 10px 0;
+    opacity: 0.3; /* Un peu plus discret pour ne pas surcharger */
+    margin-top: 40px;
+    margin-bottom: 40px;
+    pointer-events: none; /* La ligne ne bloque pas les clics */
 }
 
 /* --- NAVIGATION CENTRÉE --- */
@@ -106,4 +115,282 @@ h1 { font-size: 3rem; }
 
 @media (max-width: 1024px) {
     .main-experience-flex { flex-direction: column; }
+}
+
+/* --- PAGE COMPÉTENCES (3 COLONNES) --- */
+.page-content { padding-bottom: 80px; }
+.skill-section { padding: 60px 0; }
+.skill-section-header { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2.5rem; }
+.section-icon { width: 40px; height: 40px; }
+.skill-section-header h2 { font-size: 1.8rem; margin: 0; }
+
+/* La grille passe à 3 colonnes ici */
+.skills-grid-page {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2rem;
+}
+
+.skill-card {
+    background: var(--terminal-bg);
+    border: 1px solid rgba(56, 189, 248, 0.15);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+    transform: translateY(-5px);
+}
+
+.card-icon { width: 60px; height: 60px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; background: rgba(56, 189, 248, 0.05); border-radius: 10px; }
+.card-icon img { max-width: 40px; max-height: 40px; }
+.skill-card h3 { font-size: 1.1rem; color: white; margin-bottom: 1rem; }
+.skill-card p { font-size: 0.85rem; color: var(--text-gray); line-height: 1.6; }
+
+/* --- MODALES --- */
+.cyber-modal { background: var(--bg-midnight); color: white; border: 2px solid var(--neon-blue); border-radius: 8px; padding: 2rem; max-width: 600px; margin: auto; }
+.cyber-modal::backdrop { background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(4px); }
+.btn-close { background: transparent; border: 1px solid var(--neon-blue); color: var(--neon-blue); padding: 8px 15px; cursor: pointer; margin-top: 20px; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1200px) {
+    .skills-grid-page { grid-template-columns: repeat(2, 1fr); } /* 2 colonnes sur tablette large */
+}
+
+@media (max-width: 900px) {
+    .main-experience-flex { flex-direction: column; }
+    .skills-grid-page { grid-template-columns: 1fr; } /* 1 colonne sur mobile */
+    .about-flex { flex-direction: column; text-align: center; }
+    .nav-flex { flex-direction: column; gap: 1.5rem; }
+}
+
+/* --- Header Compétences Style Image --- */
+.skill-hero {
+    text-align: center;
+    padding: 80px 0 40px 0;
+}
+
+.gradient-text {
+    font-size: 3rem;
+    font-weight: 700;
+    /* Dégradé de bleu : du Cyan (ton néon) vers un bleu plus profond */
+    background: linear-gradient(90deg, #38bdf8, #1d4ed8); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+}
+
+.gradient-line {
+    width: 80px;
+    height: 4px;
+    /* On applique le même dégradé à la barre */
+    background: linear-gradient(90deg, #38bdf8, #1d4ed8);
+    margin: 0 auto 30px auto;
+    border-radius: 10px;
+}
+
+.skill-subtitle {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+/* --- Style pour l'icône SVG dans le titre --- */
+.section-icon-container {
+    width: 56px;  /* On a agrandi ici */
+    height: 56px; /* Et ici */
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px; /* Un peu plus de padding pour que l'icône respire */
+    flex-shrink: 0;
+    transition: 0.3s; /* Petit bonus : transition fluide si tu ajoutes un hover plus tard */
+}
+
+.section-icon-container svg {
+    width: 100%;
+    height: 100%;
+}
+
+.skill-section-header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    /* On applique un léger dégradé bleu sur les titres de section aussi */
+    background: linear-gradient(90deg, #38bdf8, #1d4ed8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- SECTION VEILLE DYNAMIQUE --- */
+
+/* Le bouton principal */
+.cyber-button {
+    background: transparent;
+    color: #38bdf8;
+    border: 2px solid #38bdf8;
+    padding: 12px 25px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.1);
+    margin: 20px 0;
+}
+
+.cyber-button:hover {
+    background: #38bdf8;
+    color: #020617;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+    transform: translateY(-2px);
+}
+
+/* La grille qui reçoit les articles */
+.skills-grid-page {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* Le bouton "Lire l'article" dans les cartes */
+.btn-veille {
+    display: inline-block;
+    margin-top: auto; /* Aligne le bouton en bas de la carte */
+    padding: 8px 15px;
+    border: 1px solid #38bdf8;
+    color: #38bdf8;
+    text-decoration: none;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.btn-veille:hover {
+    background: rgba(56, 189, 248, 0.1);
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+}
+
+/* Style de chargement */
+.loading-text {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #94a3b8;
+    font-style: italic;
+    padding: 40px;
+}
+
+/* --- PAGE CONTACT --- */
+.cyber-form {
+    background: rgba(15, 23, 42, 0.4);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(56, 189, 248, 0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.8rem;
+    color: #38bdf8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    font-family: 'Fira Code', monospace;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    background: rgba(2, 6, 23, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    color: white;
+    border-radius: 6px;
+    font-family: 'Fira Code', monospace;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: #38bdf8;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+.captcha-container {
+    background: rgba(56, 189, 248, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px dashed rgba(56, 189, 248, 0.3);
+}
+
+#captcha-input {
+    flex: 1;
+    border: 1px solid rgba(56, 189, 248, 0.5) !important;
+}
+
+/* --- STYLES PROJETS --- */
+.project-card {
+    position: relative;
+    padding-top: 40px !important;
+}
+
+.project-badge {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 0.65rem;
+    background: rgba(56, 189, 248, 0.1);
+    color: #38bdf8;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    font-family: 'Fira Code', monospace;
+}
+
+.project-desc {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.project-tags {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.project-tags li {
+    font-size: 0.75rem;
+    background: #0f172a;
+    color: #cbd5e1;
+    padding: 3px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.1);
 }
