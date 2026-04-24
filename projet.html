@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets | Bouhamed Kaïs</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-flex">
+            <div class="logo">KB</div>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="competences.html">Compétences</a></li>
+                <li><a href="veille.html">Veille</a></li>
+                <li><a href="projet.html" class="active">Projets</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="container skill-hero">
+        <h1 class="gradient-text">Réalisations Techniques</h1>
+        <div class="gradient-line"></div>
+        <p class="skill-subtitle">Sélection de projets d'infrastructure et de support réalisés en milieu professionnel et scolaire.</p>
+    </header>
+
+    <main class="container page-content">
+        <div class="skills-grid-page">
+            
+            <article class="skill-card project-card">
+                <div class="project-badge">RÉSEAU & SIMULATION</div>
+                <h3>Architecture Réseau Multi-Sites</h3>
+                <p class="project-desc">
+                    <strong>Concevoir</strong> et <strong>simuler</strong> l'infrastructure réseau complète d'une entreprise sur Cisco Packet Tracer 
+                    <strong>pour</strong> garantir l'interconnexion sécurisée des services (VLAN, Routage, Services IP).
+                </p>
+                <ul class="project-tags">
+                    <li>VLANs</li>
+                    <li>Routage Inter-VLAN</li>
+                    <li>DHCP/DNS</li>
+                    <li>ACLs</li>
+                </ul>
+                
+                <div style="display: flex; gap: 10px; margin-top: 15px;">
+                    <a href="fichiers/mini-projet.pdf" target="_blank" class="btn-veille" style="font-size: 0.7rem; padding: 6px 10px;">
+                        📄 Rapport PDF
+                    </a>
+                    <a href="fichiers/mini-projet.pkt" download class="btn-veille" style="font-size: 0.7rem; padding: 6px 10px; border-color: #94a3b8; color: #94a3b8;">
+                        💾 Fichier .PKT
+                    </a>
+                </div>
+            </article>
+
+            <article class="skill-card project-card">
+                <div class="project-badge">VIRTUALISATION & SYSTÈME</div>
+                <h3>Infrastructure GSB (Proxmox)</h3>
+                <p class="project-desc">
+                    <strong>Déployer</strong> une infrastructure virtualisée et segmentée sous Proxmox VE 
+                    <strong>pour</strong> simuler et administrer le réseau multisites de l'entreprise GSB (Services centraux et agences).
+                </p>
+                <ul class="project-tags">
+                    <li>Proxmox VE</li>
+                    <li>Debian/Windows Server</li>
+                    <li>LXC & VMs</li>
+                    <li>VLANs Linux Bridge</li>
+                </ul>
+                
+                <div style="display: flex; gap: 10px; margin-top: 15px;">
+                    <a href="https://docs.google.com/document/d/101Ot64iLdGIER-vYhF2F2vuj6sZPGACnN7dskasQn3E/edit?usp=sharing" target="_blank" class="btn-veille" style="font-size: 0.7rem; padding: 6px 10px;">
+                        📄 Documentation
+                    </a>
+                </div>
+            </article>
+
+            <article class="skill-card project-card">
+                <div class="project-badge">DÉVELOPPEMENT & GESTION</div>
+                <h3>Logiciel de Gestion de Téléphonie</h3>
+                <p class="project-desc">
+                    <strong>Développer</strong> une application de bureau en Python 
+                    <strong>pour</strong> automatiser la gestion des prestations (appels, réparations, ventes) et le suivi de la facturation client.
+                </p>
+                <ul class="project-tags">
+                    <li>Python</li>
+                    <li>SQLite (Base de données)</li>
+                    <li>Tkinter / Interface GUI</li>
+                    <li>Gestion de Flux</li>
+                </ul>
+                
+                <div style="margin-top: 15px;">
+                    <a href="https://github.com/kbouhamed/SmartDoc-Manager" target="_blank" class="btn-veille" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.041-1.416-4.041-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        Voir le dépôt GitHub
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <footer style="margin-top: 80px; text-align: center; padding: 40px; border-top: 1px solid rgba(255,255,255,0.05);">
+        <p style="color: #475569; font-size: 0.8rem;">&copy; 2026 - Bouhamed Kaïs - Portfolio SISR</p>
+    </footer>
+
+</body>
+</html>
