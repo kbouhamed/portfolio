@@ -3,14 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Bouhamed Kaïs</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-<section class="container">
-    <h2>Me contacter</h2>
-    <form action="https://formspree.io/f/[TON_ID]" method="POST" class="contact-form">
-        <input type="text" name="name" placeholder="Votre Nom" required>
-        <input type="email" name="_replyto" placeholder="Votre Email" required>
-        <textarea name="message" placeholder="Votre message" rows="5" required></textarea>
-        <button type="submit" class="btn">Envoyer</button>
-    </form>
-</section>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-flex">
+            <div class="logo">KB</div>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="competences.html">Compétences</a></li>
+                <li><a href="veille.html">Veille</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="container skill-hero">
+        <h1 class="gradient-text">Me Contacter</h1>
+        <div class="gradient-line"></div>
+    </header>
+
+    <main class="container page-content">
+        <div class="contact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 40px;">
+            
+            <div class="contact-info">
+                <div class="skill-section-header">
+                    <div class="section-icon-container">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                    </div>
+                    <h2>Coordonnées</h2>
+                </div>
+                <div class="terminal-col">
+                    <div class="terminal-body" style="padding: 25px;">
+                        <p style="margin-bottom: 15px;"><strong style="color: #38bdf8;">Email:</strong>bouhamedkais@gmail.com</p>
+                        <p style="margin-bottom: 15px;"><strong style="color: #38bdf8;">LinkedIn:</strong>linkedin.com/in/kais-bouhamed</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-container">
+                <form action="https://formspree.io/f/xojyjlyb" method="POST" class="cyber-form">
+                    <div class="form-group">
+                        <label>Nom Complet</label>
+                        <input type="text" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Objet</label>
+                        <input type="text" name="subject" placeholder="Demande d'entretien / Info" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea name="message" rows="5" placeholder="Bonjour Kaïs, je souhaiterais..." required></textarea>
+                    </div>
+                    <div class="form-group captcha-container">
+                        <label id="captcha-label">Vérification de sécurité</label>
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <span id="question" style="color: #38bdf8; font-weight: bold; min-width: 60px;"></span>
+                            <input type="number" id="captcha-input" placeholder="Réponse ?" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="cyber-button" style="width: 100%;">
+                        Envoyer la requête
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+    <footer style="margin-top: 80px; text-align: center; padding: 40px; border-top: 1px solid rgba(255,255,255,0.05);">
+        <p style="color: #475569; font-size: 0.8rem;">&copy; 2026 - Bouhamed Kaïs - Portfolio Professionnel SISR</p>
+    </footer>
+    <script>
+const form = document.querySelector('.cyber-form');
+const captchaInput = document.getElementById('captcha-input');
+const questionEl = document.getElementById('question');
+
+// --- CONFIGURATION SÉCURITÉ ---
+const MAX_ATTEMPTS = 3;
+const BAN_TIME = 60 * 60 * 1000; // 1 heure en millisecondes
+
+// Génération du calcul initial
+let n1 = Math.floor(Math.random() * 10);
+let n2 = Math.floor(Math.random() * 10);
+let correctAnswer = n1 + n2;
+questionEl.innerText = `${n1} + ${n2} =`;
+
+// --- FONCTION DE VÉRIFICATION DU BANNISSEMENT ---
+function checkBanStatus() {
+    const banExpiry = localStorage.getItem('banExpiry');
+    if (banExpiry && Date.now() < banExpiry) {
+        const remainingMin = Math.ceil((banExpiry - Date.now()) / 60000);
+        form.innerHTML = `<div style="color: #ef4444; border: 1px solid #ef4444; padding: 20px; border-radius: 8px; text-align: center;">
+            <p><strong>[SÉCURITÉ] ACCÈS BLOQUÉ</strong></p>
+            <p>Trop de tentatives échouées. Revenez dans ${remainingMin} minutes.</p>
+        </div>`;
+        return true;
+    }
+    return false;
+}
+
+// Vérifier au chargement de la page
+checkBanStatus();
+
+// --- GESTION DE L'ENVOI ---
+form.addEventListener('submit', function(e) {
+    if (checkBanStatus()) {
+        e.preventDefault();
+        return;
+    }
+
+    const userInput = parseInt(captchaInput.value);
+    let attempts = parseInt(localStorage.getItem('attempts')) || 0;
+
+    if (userInput !== correctAnswer) {
+        e.preventDefault();
+        attempts++;
+        localStorage.setItem('attempts', attempts);
+
+        if (attempts >= MAX_ATTEMPTS) {
+            const expiry = Date.now() + BAN_TIME;
+            localStorage.setItem('banExpiry', expiry);
+            alert("SÉCURITÉ : Trop d'échecs. Vous êtes banni pour 1 heure.");
+            checkBanStatus(); // Active l'affichage du blocage immédiatement
+        } else {
+            alert(`Erreur ! Tentative ${attempts}/${MAX_ATTEMPTS}.`);
+        }
+    } else {
+        // Succès : on réinitialise les tentatives
+        localStorage.removeItem('attempts');
+    }
+});
+    </script>
+</body>
+</html>
