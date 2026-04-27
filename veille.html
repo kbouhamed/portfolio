@@ -147,7 +147,7 @@ async function fetchStrictWifi() {
     const container = document.getElementById('wifi-feed');
     container.innerHTML = "<p class='loading-text'>[SCAN GLOBAL] Récupération des métadonnées temporelles...</p>";
 
-    const searchUrl = 'https://news.google.com/rss/search?q=Wi-Fi+7+802.11be&hl=fr&gl=FR&ceid=FR:fr';
+    const searchUrl = 'https://news.google.com/rss/search?q=Wi-Fi+7&hl=fr&gl=FR&ceid=FR:fr';
     
     try {
         const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(searchUrl)}`);
