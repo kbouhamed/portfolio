@@ -513,3 +513,34 @@ h1 { font-size: 3rem; }
     position: static !important; /* On annule le position absolute précédent si besoin */
     margin-bottom: 0 !important;
 }
+
+/* Style des cartes pour aligner le bouton en bas */
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pousse le bouton vers le bas */
+    padding: 20px;
+    height: 100%;
+}
+
+.btn-justif {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 12px;
+    font-size: 0.75rem;
+    text-align: center;
+    color: #38bdf8;
+    text-decoration: none;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 4px;
+    background: rgba(56, 189, 248, 0.05);
+    transition: all 0.3s ease;
+    font-family: 'Fira Code', monospace;
+}
+
+.btn-justif:hover {
+    background: rgba(56, 189, 248, 0.2);
+    border-color: #38bdf8;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+    transform: translateY(-2px);
+}
